@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ScrollToTopButton from "../components/ScrollToTopButton"
 import Appointment from "../components/Appointment";
-import TESTIMONIALS from "../components/TESTIMONIALS";
+import Testimonials from "../components/Testimonials";
 import Services from "../components/Services";
 const ServicesP = () => {
     const [isActive, setIsActive] = useState(false);
@@ -27,7 +27,7 @@ const ServicesP = () => {
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
             <Services />
             <Appointment />
-            <TESTIMONIALS />
+            <Testimonials />
             <ScrollToTopButton isActive={isActive} />
         </div>
     );
