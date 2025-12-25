@@ -1,0 +1,183 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* body {
+    background-image: url("./assets/background-3.webp");
+    background-size: cover;
+} */
+
+.center-container {
+    @apply container w-[85%] mx-auto;
+}
+
+.nav-link {
+    position: relative;
+    padding-bottom: 6px;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2.5px;
+    background: linear-gradient(90deg, #13c5dd 0%, #1d2a4d 100%);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.dark .nav-link::after {
+    background: linear-gradient(90deg, #13c5dd 0%, #60a5fa 100%);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.active-nav {
+    color: #13c5dd !important;
+    font-weight: 600;
+}
+
+.active-nav::after {
+    width: 100%;
+}
+
+.dark .active-nav-dark {
+    color: #13c5dd !important;
+}
+
+.dark .active-nav-dark::after {
+    width: 100%;
+}
+
+
+.nav-link.bg-gradient-to-r::after {
+    display: none;
+}
+
+.nav-link.bg-gradient-to-r:hover {
+    transform: translateY(-1px);
+}
+
+/* تحسينات للقائمة المنسدلة */
+@media (min-width: 1024px) {
+    .nav-link {
+        font-size: 1.05rem;
+    }
+}
+
+
+
+/* Services */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out forwards;
+}
+
+.animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.animate-expand-width {
+    animation: expandWidth 1s ease-out;
+}
+
+@keyframes expandWidth {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        width: 8rem;
+        opacity: 1;
+    }
+}
+
+.animate-bounce-slow {
+    animation: bounce 2s infinite;
+}
+
+.bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+
+/* doctor */
+.swiper-slide {
+    opacity: 0.7;
+    transform: scale(0.85);
+    transition: all 0.5s ease;
+}
+
+.swiper-slide-active,
+.swiper-slide-duplicate-active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 10;
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
+    opacity: 0.8;
+    transform: scale(0.9);
+}
+
+.active-slide {
+    border-color: #13c5dd !important;
+    box-shadow: 0 10px 40px rgba(19, 197, 221, 0.2) !important;
+}
+
+.dark .active-slide {
+    border-color: #22d3ee !important;
+    box-shadow: 0 10px 40px rgba(34, 211, 238, 0.2) !important;
+}
