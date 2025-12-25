@@ -8,7 +8,7 @@ import TestimonialsP from "./pages/TestimonialsP"
 import AppointmentP from "./pages/AppointmentP"
 import FindP from "./pages/FindP"
 import ContactP from "./pages/ContactP"
-
+import NotFound from "./pages/Notfound"
 const App = () => {
     return (
         <Routes>
@@ -21,6 +21,7 @@ const App = () => {
             <Route path="/appointment" element={<AppointmentP />} />
             <Route path="/find" element={<FindP />} />
             <Route path="/contact" element={<ContactP />} />
+            <Route path="*" element={<NotFound />} />
         </Routes>
     )
 }
